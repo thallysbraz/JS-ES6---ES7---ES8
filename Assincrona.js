@@ -1,4 +1,4 @@
-function enviarEmail(corpo, para) {
+function enviarEmail(corpo, para, callback) {
   setTimeout(() => {
     console.log(`
         Para: ${para}
@@ -7,11 +7,12 @@ function enviarEmail(corpo, para) {
         -----------------------
         De: Thallys Braz
         `);
-  }, 5000);
+    callback();
+  }, 2000);
 }
 console.log("Inicio do envio de email");
 
-enviarEmail("Oi, seja bem-vindo", "thallysbraz3@gmail.com");
-
-console.log("Seu email foi enviado");
+enviarEmail("Oi, seja bem-vindo", "thallysbraz3@gmail.com", () => {
+  console.log("Seu email foi enviado");
+});
 console.log("tudo ok");
