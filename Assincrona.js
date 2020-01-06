@@ -7,12 +7,24 @@ function enviarEmail(corpo, para, callback) {
         -----------------------
         De: Thallys Braz
         `);
-    callback();
+    callback("ok, email enviado", 3, "5s");
   }, 2000);
 }
 console.log("Inicio do envio de email");
 
-enviarEmail("Oi, seja bem-vindo", "thallysbraz3@gmail.com", () => {
-  console.log("Seu email foi enviado");
-});
+enviarEmail(
+  "Oi, seja bem-vindo",
+  "thallysbraz3@gmail.com",
+  (status, amount, time) => {
+    console.log(`
+    Status: ${status}
+    -----------------------
+    Quantidade de Pessoa: ${amount}
+    -----------------------
+    Tempo de envio: ${time}
+    -----------------------
+    `);
+    console.log("Seu email foi enviado");
+  }
+);
 console.log("tudo ok");
