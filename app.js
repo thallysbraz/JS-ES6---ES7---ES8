@@ -16,24 +16,12 @@ Ex.: const express = require("express");
 */
 var nome = "Thallys";
 var sobrenome = "Braz";
+var idade = 21;
 
-function func1() {
-  console.log("Olá " + nome);
-}
+var user = {
+  nome,
+  sobrenome,
+  idade
+};
 
-function func2() {
-  console.log("Bem-vindo " + sobrenome);
-}
-func1();
-func2();
-
-console.log(
-  "___________________________________________________________________________________________________"
-);
-
-let a = 10;
-let b = true;
-if (b == true) {
-  let b = 20;
-  console.log("resultado: ", a + b);
-}
+console.log(user);
