@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/thallysbraz/JS-ES6---ES7---ES8",
   "author": "thallysbraz <thallysbraz3@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
