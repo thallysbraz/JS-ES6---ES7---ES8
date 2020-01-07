@@ -1,12 +1,12 @@
 function enviarEmail(corpo, para) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      var error = true;
-      console.log("fora da validação");
+      var error = false;
+
       if (error) {
-        reject();
+        reject("404");
       } else {
-        resolve();
+        resolve({ time: 2, to: "thallys" });
       }
     }, 2000);
   });
@@ -14,11 +14,16 @@ function enviarEmail(corpo, para) {
 console.log("Inicio do envio de email");
 
 enviarEmail("olá", "thallys")
-  .then(() => {
-    console.log("email enviado com sucesso");
+  .then(({ time, to }) => {
+    console.log(`
+    Times: ${time}
+    ---------------------
+    To: ${to}
+    ---------------------
+    `);
   })
   .catch(Error => {
-    console.log("deu error");
+    console.log("Error: " + Error);
   });
 
 console.log("tudo ok");
