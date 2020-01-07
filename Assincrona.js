@@ -27,6 +27,7 @@ function enviarEmail(corpo, para) {
     }, 2000);
   });
 }
+
 /* Promisse Hell
 pegarId().then(id => {
   busca(id).then(email => {
@@ -65,8 +66,8 @@ async function principal() {
 principal();
 */
 
-// --------------------------------------------------------
-
+/* --------------------------------------------------------
+// Resolvendo promisse Hell com Async/Await
 async function principal() {
   var id = await pegarId();
 
@@ -82,3 +83,19 @@ async function principal() {
 }
 
 principal();
+// -------------------------------------------------------- */
+
+/* Tratamento de erros com Async e Await
+async function principal() {
+  try {
+    var id = await pegarId();
+    var email = await busca(id);
+    await enviarEmail("olá", email);
+    console.log("deu certo");
+  } catch (error) {
+    console.log("deu error");
+  }
+}
+
+principal();
+// -------------------------------------------------------- */
