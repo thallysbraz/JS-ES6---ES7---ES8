@@ -27,7 +27,7 @@ function enviarEmail(corpo, para) {
     }, 2000);
   });
 }
-
+/*
 pegarId().then(id => {
   busca(id).then(email => {
     enviarEmail("Olá", email)
@@ -39,3 +39,25 @@ pegarId().then(id => {
       });
   });
 });
+*/
+
+/* ------------------ ASYNC - AWAIT ------------------ */
+function pegarUser() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        { name: "Thallys", lang: "JS" },
+        { name: "Braz", lang: "C" },
+        { name: "Silva", lang: "HTML" }
+      ]);
+    }, 3000);
+  });
+}
+
+async function principal() {
+  var user = await pegarUser();
+  console.log(user);
+  console.log("Olá");
+}
+
+principal();
