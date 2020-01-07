@@ -1,3 +1,19 @@
+function pegarId() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 1500);
+  });
+}
+
+function busca(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("thallysbraz3@gmail.com");
+    }, 2000);
+  });
+}
+
 function enviarEmail(corpo, para) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -11,19 +27,15 @@ function enviarEmail(corpo, para) {
     }, 2000);
   });
 }
-console.log("Inicio do envio de email");
 
-enviarEmail("olá", "thallys")
-  .then(({ time, to }) => {
-    console.log(`
-    Times: ${time}
-    ---------------------
-    To: ${to}
-    ---------------------
-    `);
-  })
-  .catch(Error => {
-    console.log("Error: " + Error);
+pegarId().then(id => {
+  busca(id).then(email => {
+    enviarEmail("Olá", email)
+      .then(() => {
+        console.log("Email enviado para o id: ", id);
+      })
+      .catch(error => {
+        console.log("Falha: ", error);
+      });
   });
-
-console.log("tudo ok");
+});
