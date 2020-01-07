@@ -27,7 +27,7 @@ function enviarEmail(corpo, para) {
     }, 2000);
   });
 }
-/*
+/* Promisse Hell
 pegarId().then(id => {
   busca(id).then(email => {
     enviarEmail("Olá", email)
@@ -39,9 +39,11 @@ pegarId().then(id => {
       });
   });
 });
+
 */
 
-/* ------------------ ASYNC - AWAIT ------------------ */
+/*
+ ------------------ ASYNC - AWAIT ------------------ 
 function pegarUser() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -58,6 +60,25 @@ async function principal() {
   var user = await pegarUser();
   console.log(user);
   console.log("Olá");
+}
+
+principal();
+*/
+
+// --------------------------------------------------------
+
+async function principal() {
+  var id = await pegarId();
+
+  var email = await busca(id);
+
+  enviarEmail("olá", email)
+    .then(() => {
+      console.log("email enviado");
+    })
+    .catch(error => {
+      console.log("error");
+    });
 }
 
 principal();
