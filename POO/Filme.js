@@ -29,7 +29,8 @@ class Filme {
 
   ficha() {
     if (this.titulo == "Hulk") {
-      console.log("Titulo: Não e Hulk");
+      this.titulo = "Não e Hulk";
+      console.log("Titulo: ", this.titulo);
       console.log("---------------------------");
     } else {
       console.log("Titulo: ", this.titulo);
@@ -46,6 +47,7 @@ var starWars = new Filme();
 
 const array = [vingadores, hulk];
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < array.length; i++) {
   array[i].ficha();
 }
+console.log("hulk.titulo: ", hulk.titulo);
