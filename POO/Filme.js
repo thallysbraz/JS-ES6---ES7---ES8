@@ -26,10 +26,26 @@ class Filme {
   Fechar() {
     console.log("Fechar x");
   }
+
+  ficha() {
+    if (this.titulo == "Hulk") {
+      console.log("Titulo: Não e Hulk");
+      console.log("---------------------------");
+    } else {
+      console.log("Titulo: ", this.titulo);
+      console.log("---------------------------");
+    }
+    this.Reproduzir();
+  }
 }
 
 var vingadores = new Filme("Vingadores", 2015, "Ação", "Eu", "2h");
-console.log(vingadores);
-var hulk = new Filme();
 
+var hulk = new Filme("Hulk", 2019, "Ação", "Eu", "2h");
 var starWars = new Filme();
+
+const array = [vingadores, hulk];
+
+for (let i = 0; i < 2; i++) {
+  array[i].ficha();
+}
