@@ -27,3 +27,9 @@ class Filme {
     console.log("Fechar x");
   }
 }
+
+var vingadores = new Filme();
+
+var hulk = new Filme();
+
+var starWars = new Filme();
