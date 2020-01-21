@@ -4,13 +4,13 @@ class Filme {
   é bem semelhante ao processo de criação de variável, com a adição do "this."
   antes do nome do atributo, exemplo: this.nomeDaVariavel.
   */
-  constructor() {
-    (this.titulo = ""),
-      (this.ano = 0),
-      (this.genero = ""),
-      (this.diretor = ""),
-      (this.atores = []),
-      (this.duracao = 0);
+  constructor(titulo, ano, genero, diretor, duracao) {
+    (this.titulo = titulo),
+      (this.ano = ano),
+      (this.genero = genero),
+      (this.diretor = diretor),
+      (this.duracao = duracao),
+      (this.atores = []);
   }
 
   // MÉTODOS
@@ -28,22 +28,8 @@ class Filme {
   }
 }
 
-var vingadores = new Filme();
-
-vingadores.titulo = "Vingadores";
-
+var vingadores = new Filme("Vingadores", 2015, "Ação", "Eu", "2h");
+console.log(vingadores);
 var hulk = new Filme();
 
-hulk.titulo = "hulk";
-
 var starWars = new Filme();
-
-starWars.titulo = "starWars";
-
-var titulos = [];
-titulos.push(vingadores.titulo);
-titulos.push(hulk.titulo);
-
-console.log(titulos);
-
-console.log("vingadores", vingadores);
