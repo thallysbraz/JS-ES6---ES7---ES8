@@ -30,6 +30,20 @@ class Filme {
 
 var vingadores = new Filme();
 
+vingadores.titulo = "Vingadores";
+
 var hulk = new Filme();
 
+hulk.titulo = "hulk";
+
 var starWars = new Filme();
+
+starWars.titulo = "starWars";
+
+var titulos = [];
+titulos.push(vingadores.titulo);
+titulos.push(hulk.titulo);
+
+console.log(titulos);
+
+console.log("vingadores", vingadores);
